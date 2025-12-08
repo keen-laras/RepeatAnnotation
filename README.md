@@ -6,7 +6,7 @@ This is a guide to assemble your CycloneSEQ reads using _RepeatMasker_
 The tutorial is built for [DCS Cloud](https://cloud.stomics.tech/) users
 
 - Github repository: https://github.com/Nextomics/NextDenovo
-- Contact email for [this](https://github.com/keen-laras/CycloneSEQ_NextDeNovo_GenomeAssembly) guide: kinanti.seraphina@gmail.com
+- Contact email for [this](https://github.com/keen-laras/RepeatAnnotation/tree/main) guide: kinanti.seraphina@gmail.com
 
 ## Tutorial
 ### 1. Image
