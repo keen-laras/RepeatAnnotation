@@ -23,12 +23,19 @@ database for RepeatMasker please see https://www.repeatmasker.org/
 ### 3. Mask output file
 This pipeline results in a lowercase-repeat-fasta file. Run these commands to obtain the 'n-masked' for the genome annotation input.
 
-step 1: create a .bed file containing all the repeat coordinates
+- step 1: create a .bed file containing all the repeat coordinates
+  
 `perl extract_lowercase_bed.pl /path/to/repeatmasker/{sample}.fa.masked {output}.nmasked.bed`
-step 2: combine and sort both .bed files from libraries
+
+- step 2: combine and sort both .bed files from libraries
+  
 `cat /denovo/{output}.nmasked.bed /dfam_lib/{output}.nmasked.bed > {output}_combined_nmasked.raw.bed
 sort -k1,1 -k2,2n {output}_combined_nmasked.raw.bed > {output}_combined_nmasked.sorted.bed`
-step 3: merge coordinates from both .bed 
+
+- step 3: merge coordinates from both .bed
+  
 `/share/app/bedtools/2.29.2/bin/mergeBed -i {output}_combined_nmasked.sorted.bed > {output}_combined_nmasked.merged.bed`
-step 4: create masked fasta file
+
+- step 4: create masked fasta file
+  
 `/share/app/bedtools/2.29.2/bin/maskFastaFromBed -mc N -fi /path/to/{sample}.fa -fo {output}.FINAL.masked.fa -bed {output}_combined_nmasked.merged.bed`
